@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,14 +21,13 @@ public class CoffeeMachineRecipe {
     private long grindId;
     private double waterDose;
     private double preinfusionDose;
+    private LocalDateTime date;
+    private long userId;
+    private long rating;
+    private long bitterness;
+    private long sweetness;
+    private String additional;
 
-    @ManyToMany
-    @JoinTable(
-            name = "ratings_list",
-            joinColumns = @JoinColumn(name = "recipe_id", table = "ratings"),
-            inverseJoinColumns = @JoinColumn(name = "rating_id")
-    )
-    private List<Rating> ratingsList = new ArrayList<>();
 
     public static class Builder {
         private long id;
@@ -35,7 +35,12 @@ public class CoffeeMachineRecipe {
         private long grindId;
         private double waterDose;
         private double preinfusionDose;
-        private List<Rating> ratingsList = new ArrayList<>();
+        private LocalDateTime date;
+        private long userId;
+        private long rating;
+        private long bitterness;
+        private long sweetness;
+        private String additional;
 
         public Builder coffeeMachineId(long coffeeMachineId) {
             this.coffeeMachineId = coffeeMachineId;
@@ -57,8 +62,33 @@ public class CoffeeMachineRecipe {
             return this;
         }
 
-        public Builder rating(Rating newRating) {
-            ratingsList.add(newRating);
+        public Builder date(LocalDateTime date) {
+            this.date = date;
+            return this;
+        }
+
+        public Builder userId(long userId) {
+            this.userId = userId;
+            return this;
+        }
+
+        public Builder rating(long rating) {
+            this.rating = rating;
+            return this;
+        }
+
+        public Builder bitterness(long bitterness) {
+            this.bitterness = bitterness;
+            return this;
+        }
+
+        public Builder sweetness(long sweetness) {
+            this.sweetness = sweetness;
+            return this;
+        }
+
+        public Builder additional(String additional) {
+            this.additional = additional;
             return this;
         }
 
@@ -68,7 +98,12 @@ public class CoffeeMachineRecipe {
             coffeeMachineRecipe.grindId = grindId;
             coffeeMachineRecipe.preinfusionDose = preinfusionDose;
             coffeeMachineRecipe.waterDose = waterDose;
-            coffeeMachineRecipe.ratingsList = ratingsList;
+            coffeeMachineRecipe.date = date;
+            coffeeMachineRecipe.userId = userId;
+            coffeeMachineRecipe.rating = rating;
+            coffeeMachineRecipe.bitterness = bitterness;
+            coffeeMachineRecipe.sweetness = sweetness;
+            coffeeMachineRecipe.additional = additional;
             return coffeeMachineRecipe;
         }
 
