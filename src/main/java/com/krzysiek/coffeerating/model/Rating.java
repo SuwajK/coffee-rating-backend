@@ -6,13 +6,11 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
-public class CoffeeMachineRecipe {
+public class Rating {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -92,19 +90,19 @@ public class CoffeeMachineRecipe {
             return this;
         }
 
-        public CoffeeMachineRecipe build() {
-            CoffeeMachineRecipe coffeeMachineRecipe = new CoffeeMachineRecipe();
-            coffeeMachineRecipe.coffeeMachineId = coffeeMachineId;
-            coffeeMachineRecipe.grindId = grindId;
-            coffeeMachineRecipe.preinfusionDose = preinfusionDose;
-            coffeeMachineRecipe.waterDose = waterDose;
-            coffeeMachineRecipe.date = date;
-            coffeeMachineRecipe.userId = userId;
-            coffeeMachineRecipe.rating = rating;
-            coffeeMachineRecipe.bitterness = bitterness;
-            coffeeMachineRecipe.sweetness = sweetness;
-            coffeeMachineRecipe.additional = additional;
-            return coffeeMachineRecipe;
+        public Rating build() {
+            Rating rating = new Rating();
+            rating.coffeeMachineId = coffeeMachineId;
+            rating.grindId = grindId;
+            rating.preinfusionDose = preinfusionDose;
+            rating.waterDose = waterDose;
+            rating.date = date;
+            rating.userId = userId;
+            rating.rating = this.rating;
+            rating.bitterness = bitterness;
+            rating.sweetness = sweetness;
+            rating.additional = additional;
+            return rating;
         }
 
 

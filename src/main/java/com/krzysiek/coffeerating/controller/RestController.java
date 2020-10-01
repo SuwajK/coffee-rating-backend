@@ -1,9 +1,9 @@
 package com.krzysiek.coffeerating.controller;
 
 
-import com.krzysiek.coffeerating.model.CoffeeMachineRecipe;
+import com.krzysiek.coffeerating.model.Rating;
 import com.krzysiek.coffeerating.model.Grinder;
-import com.krzysiek.coffeerating.service.CoffeeRecipeService;
+import com.krzysiek.coffeerating.service.RatingService;
 import com.krzysiek.coffeerating.service.GrinderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +18,7 @@ import java.util.List;
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api")
 public class RestController {
-    private final CoffeeRecipeService coffeeRecipeService;
+    private final RatingService ratingService;
     private final GrinderService grinderService;
 
     @GetMapping("/grinders")
@@ -31,13 +31,13 @@ public class RestController {
         return grinderService.getGrinderById(id);
     }
 
-    @GetMapping("/recipes")
-    public List<CoffeeMachineRecipe> getAllCoffeeMachineRecipes() {
-        return coffeeRecipeService.getCoffeeMachineRecipes();
+    @GetMapping("/ratings")
+    public List<Rating> getRatings() {
+        return ratingService.getRatings();
     }
 
-    @GetMapping("/recipes/{id}")
-    public CoffeeMachineRecipe getCoffeeMachineRecipeById(@PathVariable long id) {
-        return coffeeRecipeService.getCoffeeMachineRecipeById(id);
+    @GetMapping("/ratings/{id}")
+    public Rating getRatingById(@PathVariable long id) {
+        return ratingService.getRatingById(id);
     }
 }

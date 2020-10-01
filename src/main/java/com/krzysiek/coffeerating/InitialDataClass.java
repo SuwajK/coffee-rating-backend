@@ -3,7 +3,6 @@ package com.krzysiek.coffeerating;
 
 import com.krzysiek.coffeerating.model.*;
 import com.krzysiek.coffeerating.repository.*;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDateTime;
@@ -13,19 +12,19 @@ import java.util.List;
 @Configuration
 public class InitialDataClass {
 
-    private final CoffeeMachineRecipeRepository coffeeMachineRecipeRepository;
+    private final RatingRepository ratingRepository;
     private final CoffeeMachineRepository coffeeMachineRepository;
     private final GrinderGrindRepository grinderGrindRepository;
     private final GrinderRepository grinderRepository;
     private final GrindRepository grindRepository;
 
-    public InitialDataClass(CoffeeMachineRecipeRepository coffeeMachineRecipeRepository,
+    public InitialDataClass(RatingRepository ratingRepository,
                             CoffeeMachineRepository coffeeMachineRepository,
                             GrinderGrindRepository grinderGrindRepository,
                             GrinderRepository grinderRepository,
                             GrindRepository grindRepository) {
 
-        this.coffeeMachineRecipeRepository = coffeeMachineRecipeRepository;
+        this.ratingRepository = ratingRepository;
         this.coffeeMachineRepository = coffeeMachineRepository;
         this.grinderGrindRepository = grinderGrindRepository;
         this.grinderRepository = grinderRepository;
@@ -117,7 +116,7 @@ public class InitialDataClass {
                 .build();
 
 
-        CoffeeMachineRecipe coffeeMachineRecipe1 = new CoffeeMachineRecipe.Builder()
+        Rating rating1 = new Rating.Builder()
                 .coffeeMachineId(1)
                 .waterDose(200.00)
                 .preinfusionDose(30.00)
@@ -129,7 +128,7 @@ public class InitialDataClass {
                 .sweetness(2)
                 .build();
 
-        CoffeeMachineRecipe coffeeMachineRecipe2 = new CoffeeMachineRecipe.Builder()
+        Rating rating2 = new Rating.Builder()
                 .coffeeMachineId(1)
                 .waterDose(200.00)
                 .preinfusionDose(30.00)
@@ -141,7 +140,7 @@ public class InitialDataClass {
                 .sweetness(0)
                 .build();
 
-        CoffeeMachineRecipe coffeeMachineRecipe3 = new CoffeeMachineRecipe.Builder()
+        Rating rating3 = new Rating.Builder()
                 .coffeeMachineId(1)
                 .waterDose(220.00)
                 .preinfusionDose(30.00)
@@ -153,7 +152,7 @@ public class InitialDataClass {
                 .sweetness(1)
                 .build();
 
-        CoffeeMachineRecipe coffeeMachineRecipe4 = new CoffeeMachineRecipe.Builder()
+        Rating rating4 = new Rating.Builder()
                 .coffeeMachineId(1)
                 .waterDose(100.00)
                 .preinfusionDose(30.00)
@@ -165,7 +164,7 @@ public class InitialDataClass {
                 .sweetness(2)
                 .build();
 
-        CoffeeMachineRecipe coffeeMachineRecipe5 = new CoffeeMachineRecipe.Builder()
+        Rating rating5 = new Rating.Builder()
                 .coffeeMachineId(2)
                 .waterDose(220.00)
                 .preinfusionDose(30.00)
@@ -178,7 +177,7 @@ public class InitialDataClass {
                 .additional("Powdery")
                 .build();
 
-        CoffeeMachineRecipe coffeeMachineRecipe6 = new CoffeeMachineRecipe.Builder()
+        Rating rating6 = new Rating.Builder()
                 .coffeeMachineId(2)
                 .waterDose(100.00)
                 .preinfusionDose(30.00)
@@ -210,12 +209,12 @@ public class InitialDataClass {
         coffeeMachineRepository.save(coffeeMachine1);
         coffeeMachineRepository.save(coffeeMachine2);
 
-        coffeeMachineRecipeRepository.save(coffeeMachineRecipe1);
-        coffeeMachineRecipeRepository.save(coffeeMachineRecipe2);
-        coffeeMachineRecipeRepository.save(coffeeMachineRecipe3);
-        coffeeMachineRecipeRepository.save(coffeeMachineRecipe4);
-        coffeeMachineRecipeRepository.save(coffeeMachineRecipe5);
-        coffeeMachineRecipeRepository.save(coffeeMachineRecipe6);
+        ratingRepository.save(rating1);
+        ratingRepository.save(rating2);
+        ratingRepository.save(rating3);
+        ratingRepository.save(rating4);
+        ratingRepository.save(rating5);
+        ratingRepository.save(rating6);
 
     }
 

@@ -21,13 +21,13 @@ public class CoffeeMachine {
 
     @OneToMany(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "coffeeMachineId", updatable = false, insertable = false)
-    private List<CoffeeMachineRecipe> machineRecipesList;
+    private List<Rating> machineRecipesList;
 
     public static final class Builder {
         private long id;
         private String brand;
         private String model;
-        private List<CoffeeMachineRecipe> machineRecipesList = new ArrayList<>();
+        private List<Rating> machineRecipesList = new ArrayList<>();
 
 
         public Builder brand(String brand) {
@@ -40,8 +40,8 @@ public class CoffeeMachine {
             return this;
         }
 
-        public Builder addRecipe(CoffeeMachineRecipe coffeeMachineRecipe) {
-            machineRecipesList.add(coffeeMachineRecipe);
+        public Builder addRecipe(Rating rating) {
+            machineRecipesList.add(rating);
             return this;
         }
 
