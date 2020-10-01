@@ -18,13 +18,15 @@ public class Rating {
     private long coffeeMachineId;
     private long grindId;
     private double waterDose;
+    private double brewTime;
     private double preinfusionDose;
+    private double preinfusionTime;
     private LocalDateTime date;
     private long userId;
     private long rating;
-    private long bitterness;
-    private long sweetness;
-    private String additional;
+//    private long bitterness;
+//    private long sweetness;
+//    private String additional;
 
 
     public static class Builder {
@@ -32,13 +34,15 @@ public class Rating {
         private long coffeeMachineId;
         private long grindId;
         private double waterDose;
+        private double brewTime;
         private double preinfusionDose;
+        private double preinfusionTime;
         private LocalDateTime date;
         private long userId;
         private long rating;
-        private long bitterness;
-        private long sweetness;
-        private String additional;
+//        private long bitterness;
+//        private long sweetness;
+//        private String additional;
 
         public Builder coffeeMachineId(long coffeeMachineId) {
             this.coffeeMachineId = coffeeMachineId;
@@ -55,8 +59,18 @@ public class Rating {
             return this;
         }
 
+        public Builder brewTime(double brewTime) {
+            this.brewTime = brewTime;
+            return this;
+        }
+
         public Builder preinfusionDose(double preinfusionDose) {
             this.preinfusionDose = preinfusionDose;
+            return this;
+        }
+
+        public Builder preinfusionTime(double preinfusionTime) {
+            this.preinfusionTime = preinfusionTime;
             return this;
         }
 
@@ -75,33 +89,35 @@ public class Rating {
             return this;
         }
 
-        public Builder bitterness(long bitterness) {
-            this.bitterness = bitterness;
-            return this;
-        }
-
-        public Builder sweetness(long sweetness) {
-            this.sweetness = sweetness;
-            return this;
-        }
-
-        public Builder additional(String additional) {
-            this.additional = additional;
-            return this;
-        }
+//        public Builder bitterness(long bitterness) {
+//            this.bitterness = bitterness;
+//            return this;
+//        }
+//
+//        public Builder sweetness(long sweetness) {
+//            this.sweetness = sweetness;
+//            return this;
+//        }
+//
+//        public Builder additional(String additional) {
+//            this.additional = additional;
+//            return this;
+//        }
 
         public Rating build() {
             Rating rating = new Rating();
             rating.coffeeMachineId = coffeeMachineId;
             rating.grindId = grindId;
+            rating.brewTime = brewTime;
             rating.preinfusionDose = preinfusionDose;
+            rating.preinfusionTime = preinfusionTime;
             rating.waterDose = waterDose;
             rating.date = date;
             rating.userId = userId;
             rating.rating = this.rating;
-            rating.bitterness = bitterness;
-            rating.sweetness = sweetness;
-            rating.additional = additional;
+//            rating.bitterness = bitterness;
+//            rating.sweetness = sweetness;
+//            rating.additional = additional;
             return rating;
         }
 

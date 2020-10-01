@@ -124,8 +124,8 @@ public class InitialDataClass {
                 .date(LocalDateTime.now())
                 .userId(1)
                 .rating(4)
-                .bitterness(1)
-                .sweetness(2)
+                .preinfusionTime(0)
+                .brewTime(30)
                 .build();
 
         Rating rating2 = new Rating.Builder()
@@ -136,8 +136,8 @@ public class InitialDataClass {
                 .date(LocalDateTime.now())
                 .userId(1)
                 .rating(3)
-                .bitterness(1)
-                .sweetness(0)
+                .preinfusionTime(0)
+                .brewTime(30)
                 .build();
 
         Rating rating3 = new Rating.Builder()
@@ -148,8 +148,8 @@ public class InitialDataClass {
                 .date(LocalDateTime.now())
                 .userId(1)
                 .rating(4)
-                .bitterness(1)
-                .sweetness(1)
+                .preinfusionTime(0)
+                .brewTime(30)
                 .build();
 
         Rating rating4 = new Rating.Builder()
@@ -160,8 +160,8 @@ public class InitialDataClass {
                 .date(LocalDateTime.now())
                 .userId(1)
                 .rating(1)
-                .bitterness(5)
-                .sweetness(2)
+                .preinfusionTime(0)
+                .brewTime(30)
                 .build();
 
         Rating rating5 = new Rating.Builder()
@@ -172,9 +172,8 @@ public class InitialDataClass {
                 .date(LocalDateTime.now())
                 .userId(1)
                 .rating(1)
-                .bitterness(5)
-                .sweetness(1)
-                .additional("Powdery")
+                .preinfusionTime(0)
+                .brewTime(30)
                 .build();
 
         Rating rating6 = new Rating.Builder()
@@ -185,8 +184,8 @@ public class InitialDataClass {
                 .date(LocalDateTime.now())
                 .userId(1)
                 .rating(2)
-                .bitterness(1)
-                .sweetness(2)
+                .preinfusionTime(0)
+                .brewTime(30)
                 .build();
 
         grinderRepository.save(grinder);
