@@ -40,4 +40,10 @@ public class RestController {
     public Rating getRatingById(@PathVariable long id) {
         return ratingService.getRatingById(id);
     }
+
+
+    @PostMapping("/ratings")
+    public Rating addRating(@RequestBody Rating rating) {
+        return ratingService.addRating(rating);
+    }
 }
