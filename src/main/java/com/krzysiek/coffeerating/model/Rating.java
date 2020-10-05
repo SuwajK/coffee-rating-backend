@@ -16,14 +16,20 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long coffeeMachineId;
+    @OneToOne
+    private Coffee coffee;
     private long grindId;
     private double waterDose;
+    private double coffeeDose;
     private double brewTime;
     private double preinfusionDose;
     private double preinfusionTime;
     private LocalDateTime date;
     private long userId;
     private long rating;
+
+
+//    private long coffeeId;
 //    private long bitterness;
 //    private long sweetness;
 //    private String additional;
@@ -32,8 +38,10 @@ public class Rating {
     public static class Builder {
         private long id;
         private long coffeeMachineId;
+        private Coffee coffee;
         private long grindId;
         private double waterDose;
+        private double coffeeDose;
         private double brewTime;
         private double preinfusionDose;
         private double preinfusionTime;
@@ -49,6 +57,11 @@ public class Rating {
             return this;
         }
 
+        public Builder coffeeId(Coffee coffee) {
+            this.coffee = coffee;
+            return this;
+        }
+
         public Builder grindId(long grindId) {
             this.grindId = grindId;
             return this;
@@ -56,6 +69,11 @@ public class Rating {
 
         public Builder waterDose(double waterDose) {
             this.waterDose = waterDose;
+            return this;
+        }
+
+        public Builder coffeeDose(double coffeeDose) {
+            this.coffeeDose = coffeeDose;
             return this;
         }
 
@@ -107,11 +125,13 @@ public class Rating {
         public Rating build() {
             Rating rating = new Rating();
             rating.coffeeMachineId = coffeeMachineId;
+            rating.coffee = coffee;
             rating.grindId = grindId;
             rating.brewTime = brewTime;
             rating.preinfusionDose = preinfusionDose;
             rating.preinfusionTime = preinfusionTime;
             rating.waterDose = waterDose;
+            rating.coffeeDose = coffeeDose;
             rating.date = date;
             rating.userId = userId;
             rating.rating = this.rating;

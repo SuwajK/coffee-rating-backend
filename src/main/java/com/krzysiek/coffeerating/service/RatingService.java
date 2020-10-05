@@ -1,6 +1,7 @@
 package com.krzysiek.coffeerating.service;
 
 import com.krzysiek.coffeerating.model.Rating;
+import com.krzysiek.coffeerating.repository.CoffeeRepository;
 import com.krzysiek.coffeerating.repository.RatingRepository;
 import com.krzysiek.coffeerating.repository.CoffeeMachineRepository;
 import com.krzysiek.coffeerating.repository.GrindRepository;
@@ -16,6 +17,7 @@ public class RatingService {
     private final RatingRepository ratingRepository;
     private final CoffeeMachineRepository coffeeMachineRepository;
     private final GrindRepository grindRepository;
+    private final CoffeeRepository coffeeRepository;
 
     public List<Rating> getRatings() {
         return ratingRepository.findAll();

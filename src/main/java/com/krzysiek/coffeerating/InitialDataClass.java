@@ -17,18 +17,21 @@ public class InitialDataClass {
     private final GrinderGrindRepository grinderGrindRepository;
     private final GrinderRepository grinderRepository;
     private final GrindRepository grindRepository;
+    private final CoffeeRepository coffeeRepository;
 
     public InitialDataClass(RatingRepository ratingRepository,
                             CoffeeMachineRepository coffeeMachineRepository,
                             GrinderGrindRepository grinderGrindRepository,
                             GrinderRepository grinderRepository,
-                            GrindRepository grindRepository) {
+                            GrindRepository grindRepository,
+                            CoffeeRepository coffeeRepository) {
 
         this.ratingRepository = ratingRepository;
         this.coffeeMachineRepository = coffeeMachineRepository;
         this.grinderGrindRepository = grinderGrindRepository;
         this.grinderRepository = grinderRepository;
         this.grindRepository = grindRepository;
+        this.coffeeRepository = coffeeRepository;
 
         Grind grind1 = new Grind.Builder()
                 .caption("EXTRA_SMALL")
@@ -115,10 +118,31 @@ public class InitialDataClass {
                 .model("EC55.21")
                 .build();
 
+        Coffee coffee0 = new Coffee.Builder()
+                .brand("None")
+                .name("None")
+                .build();
+
+        Coffee coffee1 = new Coffee.Builder()
+                .brand("Lavazza")
+                .name("1")
+                .build();
+
+        Coffee coffee2 = new Coffee.Builder()
+                .brand("Lavazza")
+                .name("2")
+                .build();
+
+        Coffee coffee3 = new Coffee.Builder()
+                .brand("Lavazza")
+                .name("3")
+                .build();
 
         Rating rating1 = new Rating.Builder()
                 .coffeeMachineId(1)
+                .coffeeId(coffee1)
                 .waterDose(200.00)
+                .coffeeDose(11)
                 .preinfusionDose(30.00)
                 .grindId(3)
                 .date(LocalDateTime.now())
@@ -130,7 +154,9 @@ public class InitialDataClass {
 
         Rating rating2 = new Rating.Builder()
                 .coffeeMachineId(1)
+                .coffeeId(coffee2)
                 .waterDose(200.00)
+                .coffeeDose(14)
                 .preinfusionDose(30.00)
                 .grindId(4)
                 .date(LocalDateTime.now())
@@ -142,7 +168,9 @@ public class InitialDataClass {
 
         Rating rating3 = new Rating.Builder()
                 .coffeeMachineId(1)
+                .coffeeId(coffee3)
                 .waterDose(220.00)
+                .coffeeDose(30)
                 .preinfusionDose(30.00)
                 .grindId(3)
                 .date(LocalDateTime.now())
@@ -154,7 +182,9 @@ public class InitialDataClass {
 
         Rating rating4 = new Rating.Builder()
                 .coffeeMachineId(1)
+                .coffeeId(coffee1)
                 .waterDose(100.00)
+                .coffeeDose(20)
                 .preinfusionDose(30.00)
                 .grindId(3)
                 .date(LocalDateTime.now())
@@ -166,7 +196,9 @@ public class InitialDataClass {
 
         Rating rating5 = new Rating.Builder()
                 .coffeeMachineId(2)
+                .coffeeId(coffee2)
                 .waterDose(220.00)
+                .coffeeDose(10)
                 .preinfusionDose(30.00)
                 .grindId(1)
                 .date(LocalDateTime.now())
@@ -178,7 +210,9 @@ public class InitialDataClass {
 
         Rating rating6 = new Rating.Builder()
                 .coffeeMachineId(2)
+                .coffeeId(coffee3)
                 .waterDose(100.00)
+                .coffeeDose(10)
                 .preinfusionDose(30.00)
                 .grindId(1)
                 .date(LocalDateTime.now())
@@ -187,6 +221,11 @@ public class InitialDataClass {
                 .preinfusionTime(0)
                 .brewTime(30)
                 .build();
+
+        coffeeRepository.save(coffee0);
+        coffeeRepository.save(coffee1);
+        coffeeRepository.save(coffee2);
+        coffeeRepository.save(coffee3);
 
         grinderRepository.save(grinder);
 
