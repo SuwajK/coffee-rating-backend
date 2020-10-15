@@ -1,4 +1,4 @@
-package com.krzysiek.coffeerating.config;
+package com.suwajk.coffeerating.config;
 
 
 import org.springframework.context.annotation.Bean;

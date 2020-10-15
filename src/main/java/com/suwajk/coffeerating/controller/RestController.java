@@ -1,12 +1,12 @@
-package com.krzysiek.coffeerating.controller;
+package com.suwajk.coffeerating.controller;
 
 
-import com.krzysiek.coffeerating.model.Coffee;
-import com.krzysiek.coffeerating.model.Rating;
-import com.krzysiek.coffeerating.model.Grinder;
-import com.krzysiek.coffeerating.service.CoffeeService;
-import com.krzysiek.coffeerating.service.RatingService;
-import com.krzysiek.coffeerating.service.GrinderService;
+import com.suwajk.coffeerating.model.Coffee;
+import com.suwajk.coffeerating.model.Rating;
+import com.suwajk.coffeerating.model.Grinder;
+import com.suwajk.coffeerating.service.CoffeeService;
+import com.suwajk.coffeerating.service.RatingService;
+import com.suwajk.coffeerating.service.GrinderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

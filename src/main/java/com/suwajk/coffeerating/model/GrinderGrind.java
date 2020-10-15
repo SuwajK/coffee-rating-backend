@@ -1,4 +1,4 @@
-package com.krzysiek.coffeerating.model;
+package com.suwajk.coffeerating.model;
 
 
 import lombok.Getter;
@@ -16,5 +16,6 @@ public class GrinderGrind {
     private long id;
     private long clicks;
     private long grinderId;
-    private long grindId;
+    @OneToOne
+    private Grind grindId;
 }

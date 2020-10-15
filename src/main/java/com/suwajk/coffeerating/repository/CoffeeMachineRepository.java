@@ -1,6 +1,6 @@
-package com.krzysiek.coffeerating.repository;
+package com.suwajk.coffeerating.repository;
 
-import com.krzysiek.coffeerating.model.CoffeeMachine;
+import com.suwajk.coffeerating.model.CoffeeMachine;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

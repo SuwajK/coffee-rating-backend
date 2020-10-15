@@ -1,10 +1,10 @@
-package com.krzysiek.coffeerating.service;
+package com.suwajk.coffeerating.service;
 
-import com.krzysiek.coffeerating.model.Rating;
-import com.krzysiek.coffeerating.repository.CoffeeRepository;
-import com.krzysiek.coffeerating.repository.RatingRepository;
-import com.krzysiek.coffeerating.repository.CoffeeMachineRepository;
-import com.krzysiek.coffeerating.repository.GrindRepository;
+import com.suwajk.coffeerating.model.Rating;
+import com.suwajk.coffeerating.repository.CoffeeRepository;
+import com.suwajk.coffeerating.repository.RatingRepository;
+import com.suwajk.coffeerating.repository.CoffeeMachineRepository;
+import com.suwajk.coffeerating.repository.GrindRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,7 @@
-package com.krzysiek.coffeerating;
+package com.suwajk.coffeerating;
 
-
-import com.krzysiek.coffeerating.model.*;
-import com.krzysiek.coffeerating.repository.*;
+import com.suwajk.coffeerating.model.*;
+import com.suwajk.coffeerating.repository.*;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDateTime;
@@ -70,32 +69,32 @@ public class InitialDataClass {
                 .build();
 
         GrinderGrind grinderGrind1 = new GrinderGrind();
-        grinderGrind1.setGrindId(1);
+        grinderGrind1.setGrindId(grind1);
         grinderGrind1.setGrinderId(1);
         grinderGrind1.setClicks(0);
 
         GrinderGrind grinderGrind2 = new GrinderGrind();
-        grinderGrind2.setGrindId(2);
+        grinderGrind2.setGrindId(grind2);
         grinderGrind2.setGrinderId(1);
         grinderGrind2.setClicks(4);
 
         GrinderGrind grinderGrind3 = new GrinderGrind();
-        grinderGrind3.setGrindId(3);
+        grinderGrind3.setGrindId(grind3);
         grinderGrind3.setGrinderId(1);
         grinderGrind3.setClicks(8);
 
         GrinderGrind grinderGrind4 = new GrinderGrind();
-        grinderGrind4.setGrindId(4);
+        grinderGrind4.setGrindId(grind4);
         grinderGrind4.setGrinderId(1);
         grinderGrind4.setClicks(12);
 
         GrinderGrind grinderGrind5 = new GrinderGrind();
-        grinderGrind5.setGrindId(5);
+        grinderGrind5.setGrindId(grind5);
         grinderGrind5.setGrinderId(1);
         grinderGrind5.setClicks(16);
 
         GrinderGrind grinderGrind6 = new GrinderGrind();
-        grinderGrind6.setGrindId(6);
+        grinderGrind6.setGrindId(grind6);
         grinderGrind6.setGrinderId(1);
         grinderGrind6.setClicks(24);
 

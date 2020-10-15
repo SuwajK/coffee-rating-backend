@@ -1,4 +1,4 @@
-package com.krzysiek.coffeerating.model;
+package com.suwajk.coffeerating.model;
 
 import lombok.Getter;
 import lombok.Setter;

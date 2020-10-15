@@ -1,10 +1,10 @@
-package com.krzysiek.coffeerating.service;
+package com.suwajk.coffeerating.service;
 
-import com.krzysiek.coffeerating.model.Grinder;
-import com.krzysiek.coffeerating.model.GrinderGrind;
-import com.krzysiek.coffeerating.repository.GrinderGrindRepository;
-import com.krzysiek.coffeerating.repository.GrinderRepository;
-import com.krzysiek.coffeerating.repository.GrindRepository;
+import com.suwajk.coffeerating.model.Grinder;
+import com.suwajk.coffeerating.model.GrinderGrind;
+import com.suwajk.coffeerating.repository.GrinderGrindRepository;
+import com.suwajk.coffeerating.repository.GrinderRepository;
+import com.suwajk.coffeerating.repository.GrindRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.krzysiek.coffeerating.service;
+package com.suwajk.coffeerating.service;
 
-import com.krzysiek.coffeerating.model.Coffee;
-import com.krzysiek.coffeerating.repository.CoffeeRepository;
+import com.suwajk.coffeerating.model.Coffee;
+import com.suwajk.coffeerating.repository.CoffeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
