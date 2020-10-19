@@ -1,5 +1,6 @@
 package com.suwajk.coffeerating.service;
 
+import com.suwajk.coffeerating.model.Grind;
 import com.suwajk.coffeerating.model.Grinder;
 import com.suwajk.coffeerating.model.GrinderGrind;
 import com.suwajk.coffeerating.repository.GrinderGrindRepository;
@@ -30,5 +31,12 @@ public class GrinderService {
         return grinderRepository.findById(id).orElseThrow().getGrinderGrinds();
     }
 
+    public void deleteGrinder(Grinder grinder) {
+        grinderRepository.delete(grinder);
+    }
+
+    public void deleteGrinderById(long id) {
+        grinderRepository.deleteById(id);
+    }
 
 }

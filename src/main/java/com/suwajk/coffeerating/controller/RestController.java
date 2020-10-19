@@ -37,6 +37,16 @@ public class RestController {
         return grinderService.getGrinderById(id);
     }
 
+    @DeleteMapping("/grinders")
+    public void deleteGrinder(@RequestBody Grinder grinder) {
+        grinderService.deleteGrinder(grinder);
+    }
+
+    @DeleteMapping("/grinders/{id}")
+    public void deleteGrinderById(@PathVariable long id) {
+        grinderService.deleteGrinderById(id);
+    }
+
 
     @GetMapping("/ratings")
     public List<Rating> getRatings() {
@@ -60,6 +70,16 @@ public class RestController {
         return ratingService.addRating(rating);
     }
 
+    @DeleteMapping("/ratings")
+    public void deleteRating(@RequestBody Rating rating) {
+        ratingService.deleteRating(rating);
+    }
+
+    @DeleteMapping("/ratings/{id}")
+    public void deleteRating(@PathVariable long id) {
+        ratingService.deleteRatingById(id);
+    }
+
 
     @GetMapping("/coffees")
     public List<Coffee> getCoffees() {
@@ -76,6 +96,16 @@ public class RestController {
         return coffeeService.addCoffee(coffee);
     }
 
+    @DeleteMapping("/coffees")
+    public void deleteCoffee(@RequestBody Coffee coffee) {
+        coffeeService.deleteCoffee(coffee);
+    }
+
+    @DeleteMapping("/coffees/{id}")
+    public void deleteCoffeeById(@PathVariable long id) {
+        coffeeService.deleteCoffeeById(id);
+    }
+
 
     @GetMapping("/coffeemachines")
     public List<CoffeeMachine> getAllCoffeeMachines() {
@@ -90,5 +120,15 @@ public class RestController {
     @PostMapping("/coffeemachines")
     public CoffeeMachine addCoffeeMachine(@RequestBody CoffeeMachine coffeeMachine) {
         return coffeeMachineService.addCoffeeMachine(coffeeMachine);
+    }
+
+    @DeleteMapping("/coffeemachines")
+    public void deleteCoffeeMachine(@RequestBody CoffeeMachine coffeemachine) {
+        coffeeMachineService.deleteCoffeeMachine(coffeemachine);
+    }
+
+    @DeleteMapping("/coffeemachines/{id}")
+    public void deleteCoffeeMachineById(@PathVariable long id) {
+        coffeeMachineService.deleteCoffeeMachineById(id);
     }
 }
