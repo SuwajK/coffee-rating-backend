@@ -1,5 +1,6 @@
 package com.suwajk.coffeerating.service;
 
+import com.suwajk.coffeerating.model.Coffee;
 import com.suwajk.coffeerating.model.CoffeeMachine;
 import com.suwajk.coffeerating.repository.CoffeeMachineRepository;
 import lombok.RequiredArgsConstructor;
@@ -25,4 +26,14 @@ public class CoffeeMachineService {
         coffeeMachineRepository.save(coffeeMachine);
         return coffeeMachine;
     }
+
+    public void deleteCoffeeMachine(CoffeeMachine coffeeMachine) {
+        coffeeMachineRepository.delete(coffeeMachine);
+    }
+
+    public void deleteCoffeeMachineById(long id) {
+        coffeeMachineRepository.deleteById(id);
+    }
+
+
 }

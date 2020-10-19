@@ -43,4 +43,12 @@ public class RatingService {
         originalRating.setRating(editedRating.getRating());
         return originalRating;
     }
+
+    public void deleteRating(Rating rating) {
+        ratingRepository.delete(rating);
+    }
+
+    public void deleteRatingById(long id) {
+        ratingRepository.deleteById(id);
+    }
 }

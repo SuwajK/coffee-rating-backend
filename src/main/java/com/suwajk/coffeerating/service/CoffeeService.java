@@ -33,4 +33,12 @@ public class CoffeeService {
         String name = coffee.getName();
         return coffeeRepository.findByBrandAndName(brand, name);
     }
+
+    public void deleteCoffee(Coffee coffee) {
+        coffeeRepository.delete(coffee);
+    }
+
+    public void deleteCoffeeById(long id) {
+        coffeeRepository.deleteById(id);
+    }
 }
