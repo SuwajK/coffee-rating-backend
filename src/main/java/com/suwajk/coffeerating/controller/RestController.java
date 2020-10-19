@@ -2,8 +2,10 @@ package com.suwajk.coffeerating.controller;
 
 
 import com.suwajk.coffeerating.model.Coffee;
+import com.suwajk.coffeerating.model.CoffeeMachine;
 import com.suwajk.coffeerating.model.Rating;
 import com.suwajk.coffeerating.model.Grinder;
+import com.suwajk.coffeerating.service.CoffeeMachineService;
 import com.suwajk.coffeerating.service.CoffeeService;
 import com.suwajk.coffeerating.service.RatingService;
 import com.suwajk.coffeerating.service.GrinderService;
@@ -23,6 +25,7 @@ public class RestController {
     private final RatingService ratingService;
     private final GrinderService grinderService;
     private final CoffeeService coffeeService;
+    private final CoffeeMachineService coffeeMachineService;
 
     @GetMapping("/grinders")
     public List<Grinder> getAllGrinders() {
@@ -34,6 +37,7 @@ public class RestController {
         return grinderService.getGrinderById(id);
     }
 
+
     @GetMapping("/ratings")
     public List<Rating> getRatings() {
         return ratingService.getRatings();
@@ -42,16 +46,6 @@ public class RestController {
     @GetMapping("/ratings/{id}")
     public Rating getRatingById(@PathVariable long id) {
         return ratingService.getRatingById(id);
-    }
-
-    @GetMapping("/coffees")
-    public List<Coffee> getCoffees() {
-        return coffeeService.getCoffees();
-    }
-
-    @GetMapping("/coffees/{id}")
-    public Coffee getCoffeeById(@PathVariable long id) {
-        return coffeeService.getCoffeeById(id);
     }
 
     @PostMapping("/ratings")
@@ -66,8 +60,35 @@ public class RestController {
         return ratingService.addRating(rating);
     }
 
+
+    @GetMapping("/coffees")
+    public List<Coffee> getCoffees() {
+        return coffeeService.getCoffees();
+    }
+
+    @GetMapping("/coffees/{id}")
+    public Coffee getCoffeeById(@PathVariable long id) {
+        return coffeeService.getCoffeeById(id);
+    }
+
     @PostMapping("/coffees")
     public Coffee addCoffee(@RequestBody Coffee coffee) {
         return coffeeService.addCoffee(coffee);
+    }
+
+
+    @GetMapping("/coffeemachines")
+    public List<CoffeeMachine> getAllCoffeeMachines() {
+        return coffeeMachineService.getAllCoffeeMachines();
+    }
+
+    @GetMapping("/coffeemachines/{id}")
+    public CoffeeMachine getCoffeeMachineById(@PathVariable long id) {
+        return coffeeMachineService.getCoffeeMachineById(id);
+    }
+
+    @PostMapping("/coffeemachines")
+    public CoffeeMachine addCoffeeMachine(@RequestBody CoffeeMachine coffeeMachine) {
+        return coffeeMachineService.addCoffeeMachine(coffeeMachine);
     }
 }
