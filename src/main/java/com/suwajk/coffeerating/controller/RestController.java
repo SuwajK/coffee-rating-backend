@@ -37,6 +37,11 @@ public class RestController {
         return grinderService.getGrinderById(id);
     }
 
+    @PostMapping("/grinders")
+    public Grinder addGrinder(@RequestBody Grinder grinder) {
+        return grinderService.addGrinder(grinder);
+    }
+
     @DeleteMapping("/grinders")
     public void deleteGrinder(@RequestBody Grinder grinder) {
         grinderService.deleteGrinder(grinder);

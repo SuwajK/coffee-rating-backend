@@ -31,6 +31,10 @@ public class GrinderService {
         return grinderRepository.findById(id).orElseThrow().getGrinderGrinds();
     }
 
+    public Grinder addGrinder(Grinder grinder) {
+        return grinderRepository.save(grinder);
+    }
+
     public void deleteGrinder(Grinder grinder) {
         grinderRepository.delete(grinder);
     }
