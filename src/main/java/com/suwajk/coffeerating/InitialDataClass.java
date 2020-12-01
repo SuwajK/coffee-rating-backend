@@ -17,13 +17,15 @@ public class InitialDataClass {
     private final GrinderRepository grinderRepository;
     private final GrindRepository grindRepository;
     private final CoffeeRepository coffeeRepository;
+    private final BrewMethodRepository brewMethodRepository;
 
     public InitialDataClass(RatingRepository ratingRepository,
                             CoffeeMachineRepository coffeeMachineRepository,
                             GrinderGrindRepository grinderGrindRepository,
                             GrinderRepository grinderRepository,
                             GrindRepository grindRepository,
-                            CoffeeRepository coffeeRepository) {
+                            CoffeeRepository coffeeRepository,
+                            BrewMethodRepository brewMethodRepository) {
 
         this.ratingRepository = ratingRepository;
         this.coffeeMachineRepository = coffeeMachineRepository;
@@ -31,6 +33,11 @@ public class InitialDataClass {
         this.grinderRepository = grinderRepository;
         this.grindRepository = grindRepository;
         this.coffeeRepository = coffeeRepository;
+        this.brewMethodRepository = brewMethodRepository;
+
+        BrewMethod method1 = new BrewMethod("Aeropress");
+        BrewMethod method2 = new BrewMethod("Espresso Machine");
+        BrewMethod method3 = new BrewMethod("Frenchpress");
 
         Grind grind1 = new Grind.Builder()
                 .caption("EXTRA_SMALL")
@@ -253,6 +260,9 @@ public class InitialDataClass {
         ratingRepository.save(rating5);
         ratingRepository.save(rating6);
 
+        brewMethodRepository.save(method1);
+        brewMethodRepository.save(method2);
+        brewMethodRepository.save(method3);
     }
 
 

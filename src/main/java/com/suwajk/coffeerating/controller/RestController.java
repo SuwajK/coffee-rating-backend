@@ -1,14 +1,8 @@
 package com.suwajk.coffeerating.controller;
 
 
-import com.suwajk.coffeerating.model.Coffee;
-import com.suwajk.coffeerating.model.CoffeeMachine;
-import com.suwajk.coffeerating.model.Rating;
-import com.suwajk.coffeerating.model.Grinder;
-import com.suwajk.coffeerating.service.CoffeeMachineService;
-import com.suwajk.coffeerating.service.CoffeeService;
-import com.suwajk.coffeerating.service.RatingService;
-import com.suwajk.coffeerating.service.GrinderService;
+import com.suwajk.coffeerating.model.*;
+import com.suwajk.coffeerating.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +20,7 @@ public class RestController {
     private final GrinderService grinderService;
     private final CoffeeService coffeeService;
     private final CoffeeMachineService coffeeMachineService;
+    private final BrewMethodsService brewMethodsService;
 
     @GetMapping("/grinders")
     public List<Grinder> getAllGrinders() {
@@ -135,5 +130,10 @@ public class RestController {
     @DeleteMapping("/coffeemachines/{id}")
     public void deleteCoffeeMachineById(@PathVariable long id) {
         coffeeMachineService.deleteCoffeeMachineById(id);
+    }
+
+    @GetMapping("/methods")
+    public List<BrewMethod> getBrewMethods() {
+        return brewMethodsService.getAllBrewMethods();
     }
 }
