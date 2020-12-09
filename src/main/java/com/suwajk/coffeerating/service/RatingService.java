@@ -1,13 +1,14 @@
 package com.suwajk.coffeerating.service;
 
 import com.suwajk.coffeerating.model.Rating;
-import com.suwajk.coffeerating.repository.CoffeeRepository;
-import com.suwajk.coffeerating.repository.RatingRepository;
 import com.suwajk.coffeerating.repository.CoffeeMachineRepository;
+import com.suwajk.coffeerating.repository.CoffeeRepository;
 import com.suwajk.coffeerating.repository.GrindRepository;
+import com.suwajk.coffeerating.repository.RatingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,7 +21,10 @@ public class RatingService {
     private final CoffeeRepository coffeeRepository;
 
     public List<Rating> getRatings() {
-        return ratingRepository.findAll();
+        List<Rating> list = new ArrayList<>();
+        Iterable<Rating> ratings = ratingRepository.findAll();
+        ratings.iterator().forEachRemaining(list::add);
+        return list;
     }
 
     public Rating getRatingById(Long id) {

@@ -4,8 +4,6 @@ package com.suwajk.coffeerating.controller;
 import com.suwajk.coffeerating.model.*;
 import com.suwajk.coffeerating.service.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -65,6 +63,7 @@ public class RestController {
         } else if (coffeeService.getCoffeeByCoffeeObject(rating.getCoffee()) == null) {
             coffeeService.addCoffee(rating.getCoffee());
         }
+        System.out.println(rating.toString());
         Coffee coffee = coffeeService.getCoffeeByCoffeeObject(rating.getCoffee());
         rating.setCoffee(coffee);
         return ratingService.addRating(rating);

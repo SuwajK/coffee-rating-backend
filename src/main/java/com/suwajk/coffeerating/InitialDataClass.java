@@ -35,9 +35,14 @@ public class InitialDataClass {
         this.coffeeRepository = coffeeRepository;
         this.brewMethodRepository = brewMethodRepository;
 
-        BrewMethod method1 = new BrewMethod("Aeropress");
-        BrewMethod method2 = new BrewMethod("Espresso Machine");
-        BrewMethod method3 = new BrewMethod("Frenchpress");
+        BrewMethod method1 = new BrewMethod.Builder().label("Aeropress").build();
+        BrewMethod method2 = new BrewMethod.Builder().label("Espresso Machine").build();
+        BrewMethod method3 = new BrewMethod.Builder().label("Frenchpress").build();
+
+        brewMethodRepository.save(method1);
+        brewMethodRepository.save(method2);
+        brewMethodRepository.save(method3);
+
 
         Grind grind1 = new Grind.Builder()
                 .caption("EXTRA_SMALL")
@@ -146,6 +151,7 @@ public class InitialDataClass {
 
         Rating rating1 = new Rating.Builder()
                 .coffeeMachineId(1)
+                .brewMethodId(1)
                 .coffeeId(coffee1)
                 .waterDose(200.00)
                 .coffeeDose(11)
@@ -160,6 +166,7 @@ public class InitialDataClass {
 
         Rating rating2 = new Rating.Builder()
                 .coffeeMachineId(1)
+                .brewMethodId(2)
                 .coffeeId(coffee2)
                 .waterDose(200.00)
                 .coffeeDose(14)
@@ -174,6 +181,7 @@ public class InitialDataClass {
 
         Rating rating3 = new Rating.Builder()
                 .coffeeMachineId(1)
+                .brewMethodId(3)
                 .coffeeId(coffee3)
                 .waterDose(220.00)
                 .coffeeDose(30)
@@ -188,6 +196,7 @@ public class InitialDataClass {
 
         Rating rating4 = new Rating.Builder()
                 .coffeeMachineId(1)
+                .brewMethodId(1)
                 .coffeeId(coffee1)
                 .waterDose(100.00)
                 .coffeeDose(20)
@@ -202,6 +211,7 @@ public class InitialDataClass {
 
         Rating rating5 = new Rating.Builder()
                 .coffeeMachineId(2)
+                .brewMethodId(2)
                 .coffeeId(coffee2)
                 .waterDose(220.00)
                 .coffeeDose(10)
@@ -216,6 +226,7 @@ public class InitialDataClass {
 
         Rating rating6 = new Rating.Builder()
                 .coffeeMachineId(2)
+                .brewMethodId(2)
                 .coffeeId(coffee3)
                 .waterDose(100.00)
                 .coffeeDose(10)
@@ -259,10 +270,6 @@ public class InitialDataClass {
         ratingRepository.save(rating4);
         ratingRepository.save(rating5);
         ratingRepository.save(rating6);
-
-        brewMethodRepository.save(method1);
-        brewMethodRepository.save(method2);
-        brewMethodRepository.save(method3);
     }
 
 

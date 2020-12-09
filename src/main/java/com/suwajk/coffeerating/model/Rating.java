@@ -16,6 +16,7 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long coffeeMachineId;
+    private long brewMethodId;
     @OneToOne
     private Coffee coffee;
     private long grindId;
@@ -38,6 +39,7 @@ public class Rating {
     public static class Builder {
         private long id;
         private long coffeeMachineId;
+        private long brewMethodId;
         private Coffee coffee;
         private long grindId;
         private double waterDose;
@@ -54,6 +56,11 @@ public class Rating {
 
         public Builder coffeeMachineId(long coffeeMachineId) {
             this.coffeeMachineId = coffeeMachineId;
+            return this;
+        }
+
+        public Builder brewMethodId(long brewMethodId) {
+            this.brewMethodId = brewMethodId;
             return this;
         }
 
@@ -125,6 +132,7 @@ public class Rating {
         public Rating build() {
             Rating rating = new Rating();
             rating.coffeeMachineId = coffeeMachineId;
+            rating.brewMethodId = brewMethodId;
             rating.coffee = coffee;
             rating.grindId = grindId;
             rating.brewTime = brewTime;
@@ -135,9 +143,6 @@ public class Rating {
             rating.date = date;
             rating.userId = userId;
             rating.rating = this.rating;
-//            rating.bitterness = bitterness;
-//            rating.sweetness = sweetness;
-//            rating.additional = additional;
             return rating;
         }
 
